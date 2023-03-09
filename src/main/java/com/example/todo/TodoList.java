@@ -7,6 +7,7 @@ public class TodoList {
     private String longDescription;
     private LocalDate dueDate;
 
+
     public String getShortDescription() {
         return shortDescription;
     }
