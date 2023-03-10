@@ -22,7 +22,7 @@
         <VBox style="-fx-background-color:white">
             <TextArea fx:id="largedetails" VBox.vgrow="ALWAYS" />
             <HBox>
-                <Label text="DUE : ">
+                <Label text="DUE : " textFill="saddlebrown">
                     <font>
                         <Font name="Times New Roman bold" size="15" />
                     </font>

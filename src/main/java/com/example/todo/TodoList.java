@@ -38,8 +38,6 @@ public class TodoList {
         this.dueDate = dueDate;
     }
 
-    @Override
-    public String toString() {
-        return getShortDescription();
-    }
+
+
 }

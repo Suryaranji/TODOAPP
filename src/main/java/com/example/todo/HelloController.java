@@ -5,12 +5,14 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.*;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.paint.Color;
+import javafx.util.Callback;
 
 import java.io.IOException;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-
 
 public class HelloController {
     @FXML
@@ -24,7 +26,7 @@ public class HelloController {
     private Label duedate;
     private List<TodoList> items = new ArrayList<>();
 
-    public void initialize()  {
+    public void initialize() {
 /*
          TodoList list1 = new TodoList("Study Machine Learning",
                  "Today Clustering Topic needed to be finished", LocalDate.of(2023, Month.MARCH, 5));
@@ -57,37 +59,68 @@ public class HelloController {
                 }
         );
         smalldetails.getSelectionModel().selectFirst();
+        //Instead of overriding to string method to provide listview text an alternate way
+        smalldetails.setCellFactory(new Callback<ListView<TodoList>, ListCell<TodoList>>() {
+            @Override
+            public ListCell<TodoList> call(ListView<TodoList> todoListListView) {
+                return new ListCell<>() {
+                    @Override
+                    protected void updateItem(TodoList todoList, boolean b) {
+                        super.updateItem(todoList, b);
+                        if (b) setText("");
+                        else {
+                            //updating listview cllname and text color
+                            setText(todoList.getShortDescription());
+                            if (todoList.getDueDate().equals(LocalDate.now())) {
+                                setTextFill(Color.YELLOW);
+                                duedate.setTextFill(Color.YELLOW);
+                            }
+                            if (todoList.getDueDate().isAfter(LocalDate.now())) {
+                                setTextFill(Color.GREEN);
+                                duedate.setTextFill(Color.GREEN);
+                            }
+                            if (todoList.getDueDate().isBefore(LocalDate.now())) {
+                                setTextFill(Color.RED);
+                                duedate.setTextFill(Color.RED);
+                            }
+                        }
+                    }
+                };
+            }
+        });
         //smalldetails.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE); to select multiple options
     }
-   public void showNewDialog()
-   {
-       Dialog<ButtonType> dialog=new Dialog<>();
 
-       dialog.initOwner(id.getScene().getWindow());//this method controls parent window not being used while it is open alerts user ---
-       FXMLLoader root= new FXMLLoader(HelloApplication.class.getResource("Dialog.fxml"));
-       try{
-           //load dialog pane in current window
+    public void showNewDialog() {
+        Dialog<ButtonType> dialog = new Dialog<>();
 
-           //setting dialog pane content
-           dialog.getDialogPane().setContent(root.load());
-
-       } catch (IOException e) {
-           throw new RuntimeException(e);
-       }
-       //getButton types method returns observable arraylist of button types
-       dialog.getDialogPane().getButtonTypes().add(ButtonType.CANCEL);
-       dialog.getDialogPane().getButtonTypes().add(ButtonType.OK);
-
-       Optional<ButtonType> result=dialog.showAndWait();
-       if(result.isPresent()&&result.get()==ButtonType.OK)
-       {
-           //getting controller access
-         DialogController c=root.getController();//return controller associated with root object
-          TodoList list=c.processResults();//add item to list and return instance os list
-          smalldetails.getSelectionModel().select(list);//select the newly added item
-       }
+        dialog.initOwner(id.getScene().getWindow());//this method controls parent window not being used while it is open alerts user ---
+        //load dialog pane in current window
+        FXMLLoader root = new FXMLLoader(HelloApplication.class.getResource("Dialog.fxml"));
+        try {
 
 
-   }
+            //setting dialog pane content
+            dialog.getDialogPane().setContent(root.load());
+
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        //getButton types method returns observable arraylist of button types
+        dialog.getDialogPane().getButtonTypes().add(ButtonType.CANCEL);
+        dialog.getDialogPane().getButtonTypes().add(ButtonType.OK);
+        //dialog.setHeaderText("Adding new item");//setting header text
+        dialog.setTitle("Add new Item");
+
+        Optional<ButtonType> result = dialog.showAndWait();
+        if (result.isPresent() && result.get() == ButtonType.OK) {
+            //getting controller access
+            DialogController c = root.getController();//return controller associated with root object
+            TodoList list = c.processResults();//add item to list and return instance os list
+            smalldetails.getSelectionModel().select(list);//select the newly added item
+        }
+
+
+    }
 
 }

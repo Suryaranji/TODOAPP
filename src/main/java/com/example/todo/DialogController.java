@@ -11,18 +11,17 @@ public class DialogController {
     @FXML
     private TextField Short;
     @FXML
-    private  TextArea Long;
+    private TextArea Long;
     @FXML
-    private  DatePicker Duedate;
+    private DatePicker Duedate;
 
 
     @FXML
-    public TodoList processResults()
-    {
-      String ShortDescription=Short.getText().trim();
-      String LongDescription=Long.getText().trim();
-        LocalDate date=Duedate.getValue();
-        TodoList list=new TodoList(ShortDescription,LongDescription,date);
+    public TodoList processResults() {
+        String ShortDescription = Short.getText().trim();
+        String LongDescription = Long.getText().trim();
+        LocalDate date = Duedate.getValue();
+        TodoList list = new TodoList(ShortDescription, LongDescription, date);
         //adding item to list
         TodoInstance.getTodoInstance().additem(list);
         return list;
