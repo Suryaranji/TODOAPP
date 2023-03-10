@@ -4,21 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a6b50161-5a02-43ec-a1bb-45058030e36e" name="Changes" comment="first commit 1.0">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/todo/Dialog.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/todo/TodoInstance.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/todo/Dialog.fxml" afterDir="false" />
+    <list default="true" id="a6b50161-5a02-43ec-a1bb-45058030e36e" name="Changes" comment="Second commit adding dialog pane">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/todo/DialogController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/todo/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/todo/HelloApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/todo/Dialog.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/todo/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/todo/HelloController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/todo/TodoList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/todo/TodoList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/todo/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/todo/hello-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/todo/TodoInstance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/todo/TodoInstance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/todo/Dialog.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/todo/Dialog.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -26,6 +26,13 @@
         <option value="FxmlFile" />
         <option value="Class" />
       </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
     </option>
   </component>
   <component name="MarkdownSettingsMigration">
@@ -51,7 +58,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "last_directory_selection": "D:/JAVA/TODO/src/main/java/com/example/todo",
     "last_opened_file_path": "D:/JAVA/TODO/src/main/resources/com/example/todo",
-    "settings.editor.selected.configurable": "preferences.keymap"
+    "settings.editor.selected.configurable": "editor.preferences.import"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -105,12 +112,43 @@
       <option name="project" value="LOCAL" />
       <updated>1678126999321</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Second commit adding dialog pane">
+      <created>1678386765000</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1678386765000</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="dialog" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="first commit 1.0" />
-    <option name="LAST_COMMIT_MESSAGE" value="first commit 1.0" />
+    <MESSAGE value="Second commit adding dialog pane" />
+    <option name="LAST_COMMIT_MESSAGE" value="Second commit adding dialog pane" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -1,6 +1,7 @@
 package com.example.todo;
 
 import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 import java.io.BufferedReader;
 import java.io.FileWriter;
@@ -10,11 +11,10 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.List;
 
 public class TodoInstance {
     private static final TodoInstance todoInstance = new TodoInstance();
-    private List<TodoList> itemslist;
+    private ObservableList<TodoList> itemslist;
     private DateTimeFormatter format;
 
 
@@ -26,7 +26,7 @@ public class TodoInstance {
         return todoInstance;
     }
 
-    public List<TodoList> getItemslist() {
+    public ObservableList<TodoList> getItemslist() {
         return itemslist;
     }
 
@@ -50,7 +50,6 @@ public class TodoInstance {
     public void storeItems() {
         try (
 
-
                 FileWriter writer = new FileWriter("items.txt")) {
 
             for (TodoList item : itemslist) {
@@ -61,6 +60,10 @@ public class TodoInstance {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+    }
+    public void additem(TodoList list)
+    {
+        this.itemslist.add(list);
     }
 
 
