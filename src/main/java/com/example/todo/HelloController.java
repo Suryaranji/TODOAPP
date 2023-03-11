@@ -1,6 +1,8 @@
 package com.example.todo;
 
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.*;
@@ -25,6 +27,9 @@ public class HelloController {
     @FXML
     private Label duedate;
     private List<TodoList> items = new ArrayList<>();
+    //ContextMenu
+    @FXML
+    private ContextMenu listmenuitem;
 
     public void initialize() {
 /*
@@ -40,6 +45,18 @@ public class HelloController {
          TodoInstance.getTodoInstance().setItemslist(items);
  Populating List of items
 */
+        //adding context menu item  delete
+        listmenuitem = new ContextMenu();
+        MenuItem deleteitem = new MenuItem("Delete");//item
+        //event handler when that clicked
+        deleteitem.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                deleteItem(smalldetails.getSelectionModel().getSelectedItem());//calls method
+            }
+        });
+        listmenuitem.getItems().addAll(deleteitem);
+
         items = TodoInstance.getTodoInstance().getItemslist();
         /*
             one way to populate listview
@@ -63,7 +80,7 @@ public class HelloController {
         smalldetails.setCellFactory(new Callback<ListView<TodoList>, ListCell<TodoList>>() {
             @Override
             public ListCell<TodoList> call(ListView<TodoList> todoListListView) {
-                return new ListCell<>() {
+                ListCell<TodoList> cell = new ListCell<>() {
                     @Override
                     protected void updateItem(TodoList todoList, boolean b) {
                         super.updateItem(todoList, b);
@@ -85,10 +102,32 @@ public class HelloController {
                             }
                         }
                     }
+
                 };
+                //Associate contextmenu with each valid cells
+                cell.emptyProperty().addListener(
+                        (observable, empty, nowEmpty) ->
+                        {
+                            if (nowEmpty) cell.setContextMenu(null);
+                            else cell.setContextMenu(listmenuitem);
+                        }
+                );
+                return cell;
             }
         });
-        //smalldetails.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE); to select multiple options
+    }
+    //smalldetails.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE); to select multiple options
+
+
+    private void deleteItem(TodoList selectedItem) {
+        Alert message = new Alert(Alert.AlertType.CONFIRMATION);//displaing confirmation message to delete
+        message.setTitle("Delete Item");//title for dialog
+        message.setHeaderText("Delete " + selectedItem.getShortDescription());//hader text for alert box like purpose
+        message.setContentText("Are you Sure to Delete ");//asking confirmation
+        Optional<ButtonType> result = message.showAndWait();
+        if (result.isPresent() && result.get() == ButtonType.OK) {
+            TodoInstance.getTodoInstance().removeItem(selectedItem);//call remove item
+        }
     }
 
     public void showNewDialog() {
@@ -119,8 +158,7 @@ public class HelloController {
             TodoList list = c.processResults();//add item to list and return instance os list
             smalldetails.getSelectionModel().select(list);//select the newly added item
         }
-
-
     }
+
 
 }

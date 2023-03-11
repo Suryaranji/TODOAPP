@@ -65,6 +65,10 @@ public class TodoInstance {
     {
         this.itemslist.add(list);
     }
+    public void removeItem(TodoList list)
+    {
+        itemslist.remove(list);
+    }
 
 
 }

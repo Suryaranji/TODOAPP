@@ -4,11 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a6b50161-5a02-43ec-a1bb-45058030e36e" name="Changes" comment="adding todolist item bugs cleared">
+    <list default="true" id="a6b50161-5a02-43ec-a1bb-45058030e36e" name="Changes" comment="setting colour to listview">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/todo/DialogController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/todo/DialogController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/items.txt" beforeDir="false" afterPath="$PROJECT_DIR$/items.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/todo/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/todo/HelloApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/todo/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/todo/HelloController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/todo/TodoList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/todo/TodoList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/todo/TodoInstance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/todo/TodoInstance.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/todo/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/todo/hello-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -50,16 +51,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_directory_selection": "D:/JAVA/TODO/src/main/java/com/example/todo",
-    "last_opened_file_path": "D:/JAVA/TODO/src/main/resources/com/example/todo",
-    "settings.editor.selected.configurable": "editor.preferences.import"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;last_directory_selection&quot;: &quot;D:/JAVA/TODO/src/main/java/com/example/todo&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/JAVA/TODO/src/main/resources/com/example/todo&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.import&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\JAVA\TODO\src\main\resources\com\example\todo" />
@@ -125,7 +126,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678466624699</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="setting colour to listview">
+      <created>1678472889235</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1678472889235</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -155,7 +163,8 @@
     <MESSAGE value="first commit 1.0" />
     <MESSAGE value="Second commit adding dialog pane" />
     <MESSAGE value="adding todolist item bugs cleared" />
-    <option name="LAST_COMMIT_MESSAGE" value="adding todolist item bugs cleared" />
+    <MESSAGE value="setting colour to listview" />
+    <option name="LAST_COMMIT_MESSAGE" value="setting colour to listview" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
