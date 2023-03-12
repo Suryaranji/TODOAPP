@@ -1,11 +1,11 @@
 package com.example.todo;
 
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.*;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.paint.Color;
 import javafx.util.Callback;
@@ -49,11 +49,8 @@ public class HelloController {
         listmenuitem = new ContextMenu();
         MenuItem deleteitem = new MenuItem("Delete");//item
         //event handler when that clicked
-        deleteitem.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent actionEvent) {
-                deleteItem(smalldetails.getSelectionModel().getSelectedItem());//calls method
-            }
+        deleteitem.setOnAction(actionEvent -> {
+            deleteItem(smalldetails.getSelectionModel().getSelectedItem());//calls method
         });
         listmenuitem.getItems().addAll(deleteitem);
 
@@ -129,16 +126,12 @@ public class HelloController {
             TodoInstance.getTodoInstance().removeItem(selectedItem);//call remove item
         }
     }
-
     public void showNewDialog() {
         Dialog<ButtonType> dialog = new Dialog<>();
-
         dialog.initOwner(id.getScene().getWindow());//this method controls parent window not being used while it is open alerts user ---
         //load dialog pane in current window
         FXMLLoader root = new FXMLLoader(HelloApplication.class.getResource("Dialog.fxml"));
         try {
-
-
             //setting dialog pane content
             dialog.getDialogPane().setContent(root.load());
 
@@ -159,6 +152,12 @@ public class HelloController {
             smalldetails.getSelectionModel().select(list);//select the newly added item
         }
     }
-
-
+@FXML
+    public void deleteItem(KeyEvent keyEvent) {
+        TodoList c=smalldetails.getSelectionModel().getSelectedItem();
+        if(keyEvent.getCode().equals(KeyCode.DELETE))
+        {
+            deleteItem(c);
+        }
+    }
 }
