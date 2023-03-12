@@ -18,6 +18,10 @@ public class DialogController {
 
     @FXML
     public TodoList processResults() {
+        if(Short.getText().trim().isEmpty()||Long.getText().trim().isEmpty())
+        {
+            return null;
+        }
         String ShortDescription = Short.getText().trim();
         String LongDescription = Long.getText().trim();
         LocalDate date = Duedate.getValue();

@@ -186,7 +186,21 @@ public class HelloController {
             //getting controller access
             DialogController c = root.getController();//return controller associated with root object
             TodoList list = c.processResults();//add item to list and return instance os list
-            smalldetails.getSelectionModel().select(list);//select the newly added item
+            if(list==null)
+            {
+                Alert alert=new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Invalid Values ");
+                alert.setContentText("Enter Something");
+                Optional<ButtonType> alerting =alert.showAndWait();
+//                if(alerting.isPresent()&&alerting.get().equals(ButtonType.OK))
+//                {
+//                    return;
+//                }
+
+            }
+            if(list!=null) {
+                smalldetails.getSelectionModel().select(list);//select the newly added item
+            }
         }
     }
 @FXML
