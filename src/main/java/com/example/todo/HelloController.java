@@ -86,7 +86,6 @@ public class HelloController {
                 }
             };
         filteredList=new FilteredList<>(TodoInstance.getTodoInstance().getItemslist(), allItems);
-
         SortedList<TodoList> sorted=new SortedList<>(filteredList, new Comparator<TodoList>() {
             @Override
             public int compare(TodoList o1, TodoList o2) {
@@ -191,7 +190,7 @@ public class HelloController {
                 Alert alert=new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("Invalid Values ");
                 alert.setContentText("Enter Something");
-                Optional<ButtonType> alerting =alert.showAndWait();
+                alert.showAndWait();
 //                if(alerting.isPresent()&&alerting.get().equals(ButtonType.OK))
 //                {
 //                    return;
@@ -211,7 +210,6 @@ public class HelloController {
             deleteItem(c);
         }
     }
-
     public void handleTodays(ActionEvent actionEvent) {
         TodoList list=smalldetails.getSelectionModel().getSelectedItem();
         if(TodaysItem.isSelected())
@@ -239,6 +237,16 @@ public class HelloController {
     }
 
     public void close(ActionEvent actionEvent) {
-        Platform.exit();
+        Alert alert=new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Exiting....");
+        alert.setContentText("Are You Sure to Close?");
+        Optional<ButtonType> message=alert.showAndWait();
+        if(message.isPresent()&&message.get().equals(ButtonType.OK))
+        {
+            Platform.exit();
+        }
+
     }
+
+
 }

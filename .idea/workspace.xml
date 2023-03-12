@@ -9,15 +9,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a6b50161-5a02-43ec-a1bb-45058030e36e" name="Changes" comment="Today's item button added">
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/TODO_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/todo/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF" afterDir="false" />
+    <list default="true" id="a6b50161-5a02-43ec-a1bb-45058030e36e" name="Changes" comment="Final Version 1.0">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/items.txt" beforeDir="false" afterPath="$PROJECT_DIR$/items.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/todo/DialogController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/todo/DialogController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/todo/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/todo/HelloController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/todo/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/todo/hello-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -198,7 +193,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678622715480</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Final Version 1.0">
+      <created>1678635696259</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1678635696259</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -232,7 +234,8 @@
     <MESSAGE value="delete option added" />
     <MESSAGE value="delete key pressing event handler added" />
     <MESSAGE value="Today's item button added" />
-    <option name="LAST_COMMIT_MESSAGE" value="Today's item button added" />
+    <MESSAGE value="Final Version 1.0" />
+    <option name="LAST_COMMIT_MESSAGE" value="Final Version 1.0" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
