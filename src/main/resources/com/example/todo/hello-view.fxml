@@ -9,7 +9,6 @@
             fx:controller="com.example.todo.HelloController" >
     <left>
         <ListView fx:id="smalldetails" onKeyPressed="#deleteItem">
-
         </ListView>
     </left>
     <center>
