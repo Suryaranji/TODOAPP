@@ -4,13 +4,17 @@ import javafx.application.Platform;
 import javafx.collections.transformation.FilteredList;
 import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
 import javafx.util.Callback;
 
 import java.io.IOException;
@@ -23,11 +27,12 @@ import java.util.function.Predicate;
 
 public class HelloController {
     @FXML
-    private ToggleButton TodaysItem;
+    private Button deleteIcon;//on menu bar
+    @FXML
+    private ToggleButton TodaysItem;//on menu bar
     @FXML
     private BorderPane id;
     @FXML
-
     private ListView<TodoList> smalldetails; //specify type of list it takes< Type>
     @FXML
     private TextArea largedetails;
@@ -36,10 +41,10 @@ public class HelloController {
     private List<TodoList> items = new ArrayList<>();
     //ContextMenu
     @FXML
-    private ContextMenu listmenuitem;
-    private Predicate<TodoList> allItems;
-    private Predicate<TodoList> todaysItemsOnly;
-    private FilteredList<TodoList> filteredList;
+    private ContextMenu listmenuitem; //submenu opens when mouse right clicks
+    private Predicate<TodoList> allItems; //to display all items
+    private Predicate<TodoList> todaysItemsOnly; //to display today's items
+    private FilteredList<TodoList> filteredList; //filter
 
     public void initialize() {
 /*
@@ -58,10 +63,11 @@ public class HelloController {
         //adding context menu item  delete
         listmenuitem = new ContextMenu();
         MenuItem deleteitem = new MenuItem("Delete");//item
+        deleteitem.setGraphic(new ImageView(new Image("toolbarButtonGraphics/general/Delete24.gif")));
+        EventHandler<ActionEvent> deleteEvent= actionEvent -> deleteItem(smalldetails.getSelectionModel().getSelectedItem());
         //event handler when that clicked
-        deleteitem.setOnAction(actionEvent -> {
-            deleteItem(smalldetails.getSelectionModel().getSelectedItem());//calls method
-        });
+         deleteitem.setOnAction(deleteEvent);
+         deleteIcon.setOnAction(deleteEvent);
         listmenuitem.getItems().addAll(deleteitem);
 
       //  items =TodoInstance.getTodoInstance().getItemslist() ;
@@ -77,8 +83,6 @@ public class HelloController {
                     return todoList.getDueDate().equals(LocalDate.now());
                 }
             };
-
-
             allItems=new Predicate<TodoList>() {
                 @Override
                 public boolean test(TodoList todoList) {
@@ -121,9 +125,10 @@ public class HelloController {
                         else {
                             //updating listview cllname and text color
                             setText(todoList.getShortDescription());
+                            setFont(Font.font("Times New Roman Bold"));
                             if (todoList.getDueDate().equals(LocalDate.now())) {
-                                setTextFill(Color.YELLOW);
-                                duedate.setTextFill(Color.YELLOW);
+                                setTextFill(Color.YELLOWGREEN);
+                                duedate.setTextFill(Color.YELLOWGREEN);
                             }
                             if (todoList.getDueDate().isAfter(LocalDate.now())) {
                                 setTextFill(Color.GREEN);
@@ -203,7 +208,7 @@ public class HelloController {
         }
     }
 @FXML
-    public void deleteItem(KeyEvent keyEvent) {
+    public void deleteItemKey(KeyEvent keyEvent) {
         TodoList c=smalldetails.getSelectionModel().getSelectedItem();
         if(keyEvent.getCode().equals(KeyCode.DELETE))
         {
@@ -220,10 +225,10 @@ public class HelloController {
                 largedetails.clear();
                 duedate.setText("");
             }
-            else if(filteredList.contains(list))
-            {
-                smalldetails.getSelectionModel().select(list);
-            }
+//            else if(filteredList.contains(list))
+//            {
+//                smalldetails.getSelectionModel().select(list);
+//            }
             else
             {
                 smalldetails.getSelectionModel().selectFirst();
@@ -232,7 +237,7 @@ public class HelloController {
         if(!TodaysItem.isSelected())
         {
             filteredList.setPredicate(allItems);
-            smalldetails.getSelectionModel().select(list);
+            smalldetails.getSelectionModel().selectFirst();
         }
     }
 
@@ -248,5 +253,26 @@ public class HelloController {
 
     }
 
+@FXML
+    public void edititem(ActionEvent actionEvent) {
+        TodoList list1=smalldetails.getSelectionModel().getSelectedItem();
+        Dialog dialog=new Dialog();
+        dialog.initOwner(id.getScene().getWindow());
+        FXMLLoader loader=new FXMLLoader(HelloApplication.class.getResource("Dialog.fxml"));
+            try {
+                dialog.getDialogPane().setContent(loader.load());
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+       dialog.getDialogPane().getButtonTypes().add(ButtonType.OK);
+            dialog.getDialogPane().getButtonTypes().add(ButtonType.CANCEL);
+            DialogController controller=loader.getController();
+            controller.editResults(list1);
+            Optional<ButtonType> result=dialog.showAndWait();
+            if(result.isPresent()&&result.get().equals(ButtonType.OK)) {
+                TodoInstance.getTodoInstance().removeItem(list1);
+                controller.setResults(list1);
+            }
 
+    }
 }
