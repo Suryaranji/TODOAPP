@@ -7,6 +7,7 @@ public class TodoList {
     private String longDescription;
     private LocalDate dueDate;
 
+
     public String getShortDescription() {
         return shortDescription;
     }
@@ -37,8 +38,6 @@ public class TodoList {
         this.dueDate = dueDate;
     }
 
-    @Override
-    public String toString() {
-        return getShortDescription();
-    }
+
+
 }

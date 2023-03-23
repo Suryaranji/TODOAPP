@@ -1,31 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="TODO:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a6b50161-5a02-43ec-a1bb-45058030e36e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/todo/HelloApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/todo/HelloController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/todo/TodoList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/todo/hello-view.fxml" afterDir="false" />
+    <list default="true" id="a6b50161-5a02-43ec-a1bb-45058030e36e" name="Changes" comment="Final Version 1.1 &#10;added exit confirmation">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/items.txt" beforeDir="false" afterPath="$PROJECT_DIR$/items.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/todo/DialogController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/todo/DialogController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/todo/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/todo/HelloApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/todo/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/todo/HelloController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/todo/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/todo/hello-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="FxmlFile" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -48,11 +61,19 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "D:/JAVA/TODO/src/main/resources/com/example/todo"
+    "last_directory_selection": "D:/JAVA/TODO/src/main/java/com/example/todo",
+    "last_opened_file_path": "D:/JAVA/jlfgr-1_0.jar",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "editor.preferences.import"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\JAVA\TODO\src\main\resources\com\example\todo" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\JAVA\TODO\src\main\resources\com\example\todo" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -63,6 +84,60 @@
       <recent name="" />
     </key>
   </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="mvm clean" />
+      <command value="mvm install" />
+      <command value="mvn clean" />
+      <command value="mvn install" />
+    </option>
+  </component>
+  <component name="RunManager" selected="Application.Build Jar">
+    <configuration name="Build Jar" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="com.example.todo.Main" />
+      <module name="TODO" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HelloApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.todo.HelloApplication" />
+      <module name="TODO" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.todo.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.todo.Main" />
+      <module name="TODO" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.todo.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.Build Jar" />
+      <item itemvalue="Application.HelloApplication" />
+      <item itemvalue="Application.Main" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.HelloApplication" />
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -72,6 +147,116 @@
       <option name="presentableId" value="Default" />
       <updated>1678028882012</updated>
     </task>
+    <task id="LOCAL-00001" summary="first commit 1.0">
+      <created>1678126999320</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1678126999321</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Second commit adding dialog pane">
+      <created>1678386765000</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1678386765000</updated>
+    </task>
+    <task id="LOCAL-00003" summary="adding todolist item bugs cleared">
+      <created>1678466624699</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1678466624699</updated>
+    </task>
+    <task id="LOCAL-00004" summary="setting colour to listview">
+      <created>1678472889235</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1678472889235</updated>
+    </task>
+    <task id="LOCAL-00005" summary="delete option added">
+      <created>1678557217554</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1678557217554</updated>
+    </task>
+    <task id="LOCAL-00006" summary="delete key pressing event handler added">
+      <created>1678588703042</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1678588703042</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Today's item button added">
+      <created>1678622715480</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1678622715480</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Final Version 1.0">
+      <created>1678635696259</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1678635696259</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Final Version 1.1 &#10;added exit confirmation">
+      <created>1678636670670</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1678636670670</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Final Version 1.1 &#10;added exit confirmation">
+      <created>1678685514961</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1678685514961</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="dialog" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="first commit 1.0" />
+    <MESSAGE value="Second commit adding dialog pane" />
+    <MESSAGE value="adding todolist item bugs cleared" />
+    <MESSAGE value="setting colour to listview" />
+    <MESSAGE value="delete option added" />
+    <MESSAGE value="delete key pressing event handler added" />
+    <MESSAGE value="Today's item button added" />
+    <MESSAGE value="Final Version 1.0" />
+    <MESSAGE value="Final Version 1.1 &#10;added exit confirmation" />
+    <option name="LAST_COMMIT_MESSAGE" value="Final Version 1.1 &#10;added exit confirmation" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
